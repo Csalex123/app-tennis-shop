@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
+import Shoes from '../../components/Shoes';
+
 export default function Home() {
     return (
         <View style={styles.container}>
@@ -13,13 +15,33 @@ export default function Home() {
 
                 <View style={styles.textContainer}>
                     <Text style={styles.text}>TÊNIS</Text>
-                    <Text style={[styles.text, {color: '#CECECF'}]}>-</Text>
-                    <Text style={[styles.text, {color: '#CECECF'}]}>MASCULINO</Text>
+                    <Text style={[styles.text, { color: '#CECECF' }]}>-</Text>
+                    <Text style={[styles.text, { color: '#CECECF' }]}>MASCULINO</Text>
                     <TouchableOpacity style={{ position: 'absolute', right: 0, alignSelf: 'center' }}>
                         <MaterialIcons name="filter-list" size={24} color="#000" />
                     </TouchableOpacity>
                 </View>
             </View>
+
+            <View style={styles.line} />
+
+            <ScrollView>
+                <Text style={[styles.text, { marginVertical: '2%' }]}>LANÇAMENTOS</Text>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <Shoes
+                        image={require('../../assets/1.png')}
+                        price={'R$140,90'}>
+                        Nike Air Max Dia
+                    </Shoes>
+
+                    <Shoes
+                        image={require('../../assets/2.png')}
+                        price={'R$140,90'}>
+                        Nike Downshifter 10
+                    </Shoes>
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -46,5 +68,9 @@ const styles = StyleSheet.create({
         fontFamily: 'Anton_400Regular',
         fontSize: 26,
         marginHorizontal: '1%'
+    },
+    line: {
+        borderBottomColor: '#d8d8d8',
+        borderBottomWidth: 2,
     }
 })
