@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Feather } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
 
 import Home from './pages/home';
 import Detail from './pages/Detail';
@@ -12,7 +14,15 @@ function Routes() {
         <NavigationContainer>
             <Stack.Navigator initialRouteName="home">
                 <Stack.Screen name="home" component={Home} options={{ headerShown: false }} />
-                <Stack.Screen name="detail" component={Detail} />
+                <Stack.Screen name="detail"
+                    component={Detail}
+                    options={{
+                        headerRight: () => (
+                            <TouchableOpacity style={{ marginRight: 15 }}>
+                                <Feather name="shopping-cart" size={24} color="black" />
+                            </TouchableOpacity>
+                        )
+                    }} />
             </Stack.Navigator>
         </NavigationContainer>
     )

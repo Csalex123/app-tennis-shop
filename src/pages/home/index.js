@@ -9,7 +9,7 @@ export default function Home() {
     const navigation = useNavigation();
 
     return (
-        <View style={[styles.container, {marginVertical: 20}]}>
+        <View style={[styles.container, { marginVertical: 20 }]}>
             <View style={styles.header}>
                 <Image
                     source={require('../../assets/banner.png')}
@@ -33,7 +33,7 @@ export default function Home() {
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                     <Shoes
-                        onClick={() => navigation.navigate('detail')}
+                        onClick={() => navigation.navigate('detail', 'teste')}
                         image={require('../../assets/1.png')}
                         price={'R$140,90'}>
                         Nike Air Max Dia

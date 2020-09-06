@@ -3,6 +3,8 @@ import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from 'rea
 
 import Dot from '../../components/Dot';
 import SizeButton from '../../components/SizeButton';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
 
 export default function Detail({ navigation }) {
 
@@ -42,6 +44,26 @@ export default function Detail({ navigation }) {
                     </ScrollView>
                 </View>
 
+                <View style={styles.textContainer}>
+                    <Text style={[styles.textTitle]}>
+                        Nike Downshifter 10
+                    </Text>
+                    <Text style={styles.textContainer}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis ipsum sapien. Nullam blandit neque sed nibh sollicitudin luctus. Vivamus vel hendrerit mi, a aliquam nisi. Sed est risus, condimentum non metus vel
+                    </Text>
+                    <Text style={styles.textList}>
+                        - Categoria: Amortecimento
+                    </Text>
+                    <Text  style={styles.textList}>
+                        - Material: Mesh
+                    </Text>
+                </View>
+
+                <Button />
+
+                <View style={styles.line} />
+
+                <Footer />
             </View>
         </ScrollView>
     );
@@ -63,5 +85,25 @@ const styles = StyleSheet.create({
     dotContainer: {
         flexDirection: 'row',
         marginVertical: '7%'
+    },
+    textContainer: {
+        fontSize: 16,
+        lineHeight: 25,
+        marginVertical: '2%',
+        paddingHorizontal: '2%',
+    },
+    textTitle: {
+        fontSize: 22,
+        lineHeight: 25,
+        paddingHorizontal: '2%',
+        marginVertical: '2%',
+    },
+    textList: {
+        fontSize: 16,
+        lineHeight: 25,
+    },
+    line: {
+        borderWidth: 1,
+        borderBottomColor: '#DDD',
     }
 })
