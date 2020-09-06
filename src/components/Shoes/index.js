@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function Shoes({ image, children = 'Tênis sem nome', price }) {
+export default function Shoes({ image, children = 'Tênis sem nome', price, onClick }) {
 
     function filterDesc(desc) {
         if (desc.length < 27) {
@@ -12,7 +12,7 @@ export default function Shoes({ image, children = 'Tênis sem nome', price }) {
     }
 
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity onPress={onClick} style={styles.container}>
             <Image
                 source={image}
                 style={styles.shoesImg}

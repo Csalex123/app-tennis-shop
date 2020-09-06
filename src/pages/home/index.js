@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import Shoes from '../../components/Shoes';
 
 export default function Home() {
+    const navigation = useNavigation();
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {marginVertical: 20}]}>
             <View style={styles.header}>
                 <Image
                     source={require('../../assets/banner.png')}
@@ -30,17 +33,48 @@ export default function Home() {
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                     <Shoes
+                        onClick={() => navigation.navigate('detail')}
                         image={require('../../assets/1.png')}
                         price={'R$140,90'}>
                         Nike Air Max Dia
                     </Shoes>
 
                     <Shoes
+                        onClick={() => navigation.navigate('detail')}
                         image={require('../../assets/2.png')}
-                        price={'R$140,90'}>
+                        price={'R$240,90'}>
                         Nike Downshifter 10
                     </Shoes>
                 </View>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <Shoes
+                        image={require('../../assets/3.png')}
+                        price={'R$640,90'}>
+                        Max Air  Dia
+                    </Shoes>
+
+                    <Shoes
+                        image={require('../../assets/4.png')}
+                        price={'R$840,90'}>
+                        Nike Epic 10
+                    </Shoes>
+                </View>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <Shoes
+                        image={require('../../assets/5.png')}
+                        price={'R$440,90'}>
+                        Nike Strong Dia 51
+                    </Shoes>
+
+                    <Shoes
+                        image={require('../../assets/6.png')}
+                        price={'R$140,90'}>
+                        Nike black 10
+                    </Shoes>
+                </View>
+
             </ScrollView>
         </View>
     )
